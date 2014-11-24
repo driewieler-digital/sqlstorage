@@ -61,8 +61,14 @@ class storage {
 	function change_row($vars, $id, $value) {
 		$dbm = new db_manager();	
 		// set all to true
-		$r = change_row($table, $vars, $this->varnames, $id, $value);
+		$r = $dbm->change_row($this->table, $vars, $this->varnames, $id, $value);
 		return $r;
+	}
+	
+	function remove_row($key, $value) {
+		$dbm = new db_manager();	
+		$dbm->remove_row($this->table, $key, $value);
+		
 	}
 }
 

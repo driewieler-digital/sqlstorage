@@ -204,6 +204,11 @@ var $server;
 
 
 		}
+		
+	function remove_row($table, $key, $value) {
+		$qu = "delete from ".$table." where ".$key." = ".$value.";";
+		$this->server->query($qu);		
+	}
 
 	function get_max($something, $table)
 		{
